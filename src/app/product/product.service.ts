@@ -6,6 +6,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
+  private products: Product[] = [];
   private productsSubject$: BehaviorSubject<Product[]> = new BehaviorSubject(this.getFromStorage());
   products$ = this.productsSubject$.asObservable();
 
@@ -20,8 +21,6 @@ export class ProductService {
   setToStorage(){
     sessionStorage.setItem('products', JSON.stringify(this.products));
   }
-
-  private products: Product[] = [];
 
   constructor() {
     // this.productsSubject$.next(this.products);

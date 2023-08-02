@@ -1,5 +1,7 @@
 <h1 class="heading">Products</h1>
-<div *ngFor="let product of products" class="productList">
-    <app-product-item [productItem]="product"></app-product-item>
+<div class="productList">
+    <div *ngFor="let product of products" >
+        <app-product-item [productItem]="product"></app-product-item>
+    </div>
 </div>
 
